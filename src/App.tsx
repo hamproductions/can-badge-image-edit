@@ -91,8 +91,13 @@ function App() {
           _print={{ px: 'var(--padding)', py: 'var(--padding)' }}
         >
           <Stack justifyContent="center" alignItems="center">
-            <Stack _print={{ display: 'none' }}>
-              <Heading size="xl">Settings</Heading>
+            <Stack alignItems="center" _print={{ display: 'none' }}>
+              <Heading as="h1" size="2xl" textAlign="center">
+                Can badge image preparation tool
+              </Heading>
+              <Heading as="h3" size="xl">
+                Settings
+              </Heading>
               <HStack>
                 <Text>Diameter (mm)</Text>
                 <Input
@@ -158,10 +163,12 @@ function App() {
                 <Grid
                   key={page}
                   style={{ WebkitPrintColorAdjust: 'exact' }}
-                  justifyContent="space-between"
-                  alignItems="space-between"
+                  justifyContent="space-around"
+                  alignContent="space-between"
+                  alignItems="center"
                   gridTemplateColumns="repeat(auto-fill, var(--diameter, 80mm))"
                   w="full"
+                  justifyItems="center"
                   pageBreakBefore="always"
                   _print={{ h: 'full', gridGap: 'var(--gap)' }}
                 >
