@@ -5,6 +5,7 @@ import { Button } from './ui/button';
 import { IconButton } from './ui/icon-button';
 import Cropper, { Area } from 'react-easy-crop';
 import getCroppedImg from '~/utils/image';
+import { css } from 'styled-system/css';
 
 export const ImageEditModal = ({
   file,
@@ -65,6 +66,10 @@ export const ImageEditModal = ({
                     onCropComplete={onCropComplete}
                     onZoomChange={setZoom}
                     cropShape="round"
+                    showGrid
+                    classes={{
+                      cropAreaClassName: css({})
+                    }}
                     zoom={zoom}
                   />
                 )}
