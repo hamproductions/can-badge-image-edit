@@ -60,6 +60,8 @@ function App() {
     fileRef.current.value = '';
   };
 
+  const perPage = calculatePage(diameter);
+
   const handleDeleteImage = (i: number) => {
     setFileList((l) => l.filter((_, idx) => idx !== i));
     setImages((l) => l.filter((_, idx) => idx !== i));
@@ -150,7 +152,7 @@ function App() {
                 Add Files
               </Button>
             </Stack>
-            {chunk(images, calculatePage(diameter)).map((data, page: number) => {
+            {chunk(images, perPage).map((data, page: number) => {
               return (
                 <Grid
                   key={page}
@@ -234,7 +236,7 @@ function App() {
           </Text>
         </Stack>
       </Stack>
-      {selectedFileIndex !== undefined && images[selectedFileIndex] && (
+      {selectedFileIndex !== undefined && fileList[selectedFileIndex] && (
         <ImageEditModal
           file={fileList[selectedFileIndex]}
           onClose={() => setSelectedFileIndex(undefined)}

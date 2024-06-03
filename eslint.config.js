@@ -31,6 +31,12 @@ const config = tseslint.config(
       '@typescript-eslint/no-unsafe-return': 'off'
     }
   },
+  {
+    plugins: ['eslint-plugin-react-compiler'],
+    rules: {
+      'react-compiler/react-compiler': 'warning'
+    }
+  },
   // ...compat.config({ extends: ["plugin:@pandacss/recommended"] }),
   // {
   //   rules: {
