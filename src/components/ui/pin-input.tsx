@@ -1,11 +1,11 @@
-import type { Assign } from '@ark-ui/react'
-import { PinInput as ArkPinInput, type PinInputRootProps } from '@ark-ui/react/pin-input'
-import { type ReactNode, forwardRef } from 'react'
-import { css, cx } from 'styled-system/css'
-import { splitCssProps } from 'styled-system/jsx'
-import { type PinInputVariantProps, pinInput } from 'styled-system/recipes'
-import type { JsxStyleProps } from 'styled-system/types'
-import { Input } from '~/components/ui/input'
+import type { Assign } from '@ark-ui/react';
+import { PinInput as ArkPinInput, type PinInputRootProps } from '@ark-ui/react/pin-input';
+import { forwardRef } from 'react';
+import { css, cx } from 'styled-system/css';
+import { splitCssProps } from 'styled-system/jsx';
+import { pinInput, type PinInputVariantProps } from 'styled-system/recipes';
+import type { JsxStyleProps } from 'styled-system/types';
+import { Input } from '~/components/ui/input';
 
 export interface PinInputProps
   extends Assign<JsxStyleProps, PinInputRootProps>,
@@ -14,14 +14,14 @@ export interface PinInputProps
    * The number of inputs to render.
    * @default 4
    */
-  length?: number
+  length?: number;
 }
 
 export const PinInput = forwardRef<HTMLDivElement, PinInputProps>((props, ref) => {
-  const [variantProps, pinInputProps] = pinInput.splitVariantProps(props)
-  const [cssProps, localProps] = splitCssProps(pinInputProps)
-  const { children, className, length = 4, ...rootProps } = localProps
-  const styles = pinInput(variantProps)
+  const [variantProps, pinInputProps] = pinInput.splitVariantProps(props);
+  const [cssProps, localProps] = splitCssProps(pinInputProps);
+  const { children, className, length = 4, ...rootProps } = localProps;
+  const styles = pinInput(variantProps);
 
   return (
     <ArkPinInput.Root
@@ -38,7 +38,7 @@ export const PinInput = forwardRef<HTMLDivElement, PinInputProps>((props, ref) =
         ))}
       </ArkPinInput.Control>
     </ArkPinInput.Root>
-  )
-})
+  );
+});
 
-PinInput.displayName = 'PinInput'
+PinInput.displayName = 'PinInput';
