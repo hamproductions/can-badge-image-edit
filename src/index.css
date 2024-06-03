@@ -1,0 +1,13 @@
+@layer reset, base, tokens, recipes, utilities;
+
+html {
+  scroll-snap-type: y proximity;
+}
+
+@page  
+{ 
+    size: 210mm 297mm;   /* auto is the initial value */ 
+
+    /* this affects the margin in the printer settings */ 
+    margin:0;  
+} 
