@@ -96,7 +96,7 @@ export default async function getCroppedImg(
         reject(undefined);
         return;
       }
-      resolve(new File([file], 'cropped.jpg'));
-    }, 'image/jpeg');
+      resolve(new File([file], 'cropped.png'));
+    }, 'image/png');
   });
 }
