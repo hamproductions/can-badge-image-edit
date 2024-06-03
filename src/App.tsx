@@ -57,6 +57,7 @@ function App() {
     setImages((l) => [...l, ...selectedFileList]);
     setSelectedFileList([]);
     setKey(new Date().valueOf());
+    // eslint-disable-next-line react-compiler/react-compiler
     fileRef.current.value = '';
   };
 
@@ -167,7 +168,7 @@ function App() {
                   {data.map((file, index) => (
                     <GridItem
                       key={index}
-                      onClick={() => setSelectedFileIndex(index)}
+                      onClick={() => setSelectedFileIndex(perPage * page + index)}
                       display="block"
                       position="relative"
                     >

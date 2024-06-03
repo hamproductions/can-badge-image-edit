@@ -60,6 +60,7 @@ export const ImageEditModal = ({
                     image={URL.createObjectURL(file)}
                     crop={crop}
                     aspect={1}
+                    maxZoom={5}
                     onCropChange={setCrop}
                     onCropComplete={onCropComplete}
                     onZoomChange={setZoom}
