@@ -11,7 +11,8 @@ export default defineConfig({
     createPreset({
       accentColor: 'pink',
       grayColor: 'neutral',
-      borderRadius: 'lg'
+      borderRadius: 'lg',
+      additionalColors: ['grass', 'red']
     })
   ],
 
