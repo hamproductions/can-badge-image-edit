@@ -93,32 +93,11 @@ function App() {
           <Stack justifyContent="center" alignItems="center">
             <Stack alignItems="center" _print={{ display: 'none' }}>
               <Heading as="h1" size="2xl" textAlign="center">
-                Can badge image preparation tool
+                Oshi Cropper
               </Heading>
               <Heading as="h3" size="xl">
                 Settings
               </Heading>
-              <HStack>
-                <Text>Diameter (mm)</Text>
-                <Input
-                  type="number"
-                  value={diameter}
-                  onChange={(e) => setDiameter(Number(e.target.value))}
-                />
-                <Text>Area (mm)</Text>
-                <Input
-                  type="number"
-                  value={area}
-                  onChange={(e) => setArea(Number(e.target.value))}
-                />
-                <Text>Safe Margin (mm)</Text>
-                <Input
-                  type="number"
-                  value={safeMargin}
-                  onChange={(e) => setSafeMargin(Number(e.target.value))}
-                />
-                <Button onClick={handleReset}>Reset</Button>
-              </HStack>
               <FileUpload.Root
                 key={key}
                 maxFiles={Infinity}
@@ -154,6 +133,28 @@ function App() {
                 </FileUpload.ItemGroup>
                 <FileUpload.HiddenInput type="file" ref={fileRef} accept="image/*" />
               </FileUpload.Root>
+              <HStack>
+                <Text>Diameter (mm)</Text>
+                <Input
+                  type="number"
+                  value={diameter}
+                  onChange={(e) => setDiameter(Number(e.target.value))}
+                />
+                <Text>Area (mm)</Text>
+                <Input
+                  type="number"
+                  value={area}
+                  onChange={(e) => setArea(Number(e.target.value))}
+                />
+                <Text>Safe Margin (mm)</Text>
+                <Input
+                  type="number"
+                  value={safeMargin}
+                  onChange={(e) => setSafeMargin(Number(e.target.value))}
+                />
+                <Button onClick={handleReset}>Reset</Button>
+              </HStack>
+
               <Button disabled={selectedFileList.length === 0} onClick={() => handleAddFiles()}>
                 Add Files
               </Button>
@@ -238,7 +239,7 @@ function App() {
               ハムP
             </Link>{' '}
             | Source Code on{' '}
-            <Link href="https://github.com/hamproductions/can-badge-image-edit" target="_blank">
+            <Link href="https://github.com/hamproductions/oshi-cropper" target="_blank">
               GitHub
             </Link>
           </Text>
